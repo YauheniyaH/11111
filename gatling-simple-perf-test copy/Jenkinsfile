@@ -4,7 +4,7 @@ pipeline {
 
  stages {
 
- stage('Performance Tests') {
+ stage('Gatling Preparation') {
     steps {
       sh "rm -rf /var/tmp/gatling3"
        sh "mkdir /var/tmp/gatling3"
