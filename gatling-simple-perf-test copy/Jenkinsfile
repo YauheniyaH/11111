@@ -21,12 +21,11 @@ pipeline {
 
  stage('Performance Tests') {
   steps{
-      // dir('.') {
-          sh '''/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.3.1/bin/gatling.sh -rf . -rsf src/test/resources/ -sf /src/test/scala/simulations/ -s simulations.PerfTestSimulation
-        '''
+      dir('.') {
+          sh "/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.3.1/bin/gatling.sh -rf . -rsf src/test/resources/ -sf /src/test/scala/simulations/ -s simulations.PerfTestSimulation"
         gatlingArchive()
           }
-  //  }
+    }
 
   }
 
